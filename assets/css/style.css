@@ -1,0 +1,164 @@
+body {
+    background: white;
+    color: rgb(173, 173, 173);
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto; 
+    grid-template-areas: 
+        "navbar"
+        "principal"
+        "footer";
+}
+
+
+nav {
+    padding: 5px 20px;
+    grid-area: navbar;
+    background: rgb(20, 4, 48);
+    color: white;
+    text-align: center;
+}
+
+nav img {
+    width: 80%;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+nav li {
+    margin: 0px 5px;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+}
+nav li:hover{
+    background-color: #bbbbbb1a;
+}
+nav li:active{
+    background-color: #bbbbbb00;
+}
+
+
+main {
+    grid-area: principal;
+    text-align: center;
+    background-color: #000000;
+}
+
+
+footer {
+    grid-area: footer;
+    background: black;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    width: 100%;
+    border-top: solid white 1px;
+}
+
+footer i, p {
+    margin: 5px;
+    font-size: 1rem;
+    color: #bbb;
+    transition: color 0.3s;
+    text-align: start;
+}
+
+footer i:hover,p:hover {
+    color: #fff;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.card {
+    border: solid 1px rgb(255, 255, 255);
+    background-color: #0e0e0e;
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    transition: all 0.3s;
+}
+.card:hover{
+    color: white;
+}
+
+.card img {
+    width: 200px;
+    filter: blur(3px);
+    border-radius: 15px;
+}
+
+.card img:hover {
+    transform: scale(1.02);
+    filter: none;
+}
+.card img:active{
+    transform: scale(1);
+    filter: none;
+}
+.paginador{
+    text-align: center;
+    margin: 15px;
+}
+
+
+@media (min-width: 575px) {
+    body {
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: auto 1fr; 
+        grid-template-areas: 
+            "navbar principal"
+            "footer footer";
+    }
+    nav {
+        padding: 0;
+    }
+    nav ul{
+        display: inline;
+    }
+    nav li {
+        margin: 0;
+        height: 50px;
+        border-bottom: solid grey 1px;
+        border-top: solid grey 1px;
+
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px;
+        justify-content: space-around;
+    }
+
+    .card {
+        margin: 10px;
+    }
+
+    .card img {
+        width: 250px;
+        height: 250px;
+    }
+}
